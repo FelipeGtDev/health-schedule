@@ -2,28 +2,28 @@ export const navbarData = [
 
     {
         routelink: 'dashboard',
-        icon: 'fa fa-home',
+        icon: 'fal fa-home',
         label: 'Dashboard'
     },
     {
         routelink: 'employee',
-        icon: 'fa fa-hospital-user',
+        icon: 'fal fa-hospital-user',
         label: 'Profissional'
     },
     {
         routelink: 'patient',
-        icon: 'fa fa-user',
+        icon: 'fal fa-user',
         label: 'Paciente'
     },
 
     {
         routelink: 'calendar',
-        icon: 'fa fa-calendar',
+        icon: 'fal fa-calendar',
         label: 'Atendimento'
     },
     {
         routelink: 'financial',
-        icon: 'fa fa-money-bill-wave',
+        icon: 'fal fa-money-bill-wave',
         label: 'Financeiro'
     },
 ]

@@ -1,9 +1,12 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {navbarData} from "./nav-data";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
-
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 
 
 @Component({
@@ -17,24 +20,36 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
     RouterLinkActive
   ],
   templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss'
-})
-export class SidenavComponent {
+  styleUrl: './sidenav.component.scss',
 
-  @Output() onToggleSideNav = new EventEmitter();
+})
+export class SidenavComponent implements OnInit {
+
+  @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
 
-  toggleCollapse() {
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+    if(this.screenWidth <= 768 ) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    }
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+  }
+
+  toggleCollapse(): void {
     this.collapsed = !this.collapsed;
-    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth})
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
-  closeSidenav() {
+  closeSidenav(): void {
     this.collapsed = false;
-    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth})
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
-
-
 }
