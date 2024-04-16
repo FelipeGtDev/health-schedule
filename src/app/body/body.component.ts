@@ -7,7 +7,7 @@ import {RouterOutlet} from "@angular/router";
   standalone: true,
     imports: [
         NgClass,
-        RouterOutlet
+        RouterOutlet,
     ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.scss'

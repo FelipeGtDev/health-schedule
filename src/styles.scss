@@ -23,3 +23,7 @@ body {
 .header {
   margin-bottom: 1em;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
