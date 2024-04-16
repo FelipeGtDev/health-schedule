@@ -9,31 +9,54 @@
 </button>
 
 
-<form class="mt-10 row ">
+<form class="mt-10 ">
 
-    <div style="display: inline-block">
+    <div class="container">
 
-            <label class="input input-bordered items-center gap-2 pt-3 pb-3">
-
-                <input type="text" class="grow" placeholder="informe o nome do paciente"/>
+        <div class="search-item ">
+            <label class="column">
+                Paciente:
             </label>
-
-
-            <label class="input input-bordered items-center gap-2 pt-3 pb-3">
-
-                <input type="text" class="grow" placeholder="informe o nome do profissional"/>
+            <input type="text" placeholder="informe o nome do paciente"
+                   class="grow  input input-bordered items-center gap-2 pt-3 pb-3 "/>
+        </div>
+        <div class="search-item">
+            <label class="column">
+                Profissional:
             </label>
+            <input type="text" placeholder="informe o nome do profissional"
+                   class=" grow input input-bordered items-center gap-2 pt-3 pb-3"/>
+        </div>
 
-            <label class="input input-bordered items-center gap-2 pt-3 pb-3">
+        <div class="search-item">
+
+            <label>
                 data inicial:
-                <input type="date" class="grow" placeholder="data inicial"/>
+            </label>
+            <input type="date" class="grow" placeholder="data inicial"
+                   class="input input-bordered items-center gap-2 pt-3 pb-3"/>
+        </div>
+        <div class="search-item">
+
+            <label>
+                data final:
+            </label>
+            <input type="date" class="grow" placeholder="data final"
+                   class="input input-bordered items-center gap-2 pt-3 pb-3"/>
+        </div>
+
+        <div class="search-item">
+            <label style="color: transparent">
+                a
             </label>
 
+            <button class="btn btn-primary " style="display: inline">
+                <i class="fal fa-search" style="margin-right: .8em"></i>
+                Buscar
+            </button>
 
-
+        </div>
     </div>
-
-
 </form>
 
 
