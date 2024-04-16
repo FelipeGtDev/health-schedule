@@ -20,6 +20,7 @@
 
   .logo {
     background: #fff;
+    color: #516181;
     text-align: center;
     width: 3rem;
     border-radius: 0.313rem;
@@ -31,7 +32,7 @@
   }
 
   .logo-text {
-    color: #263238;
+    color: #516181;
     font-size: 1.7em;
     font-weight: 700;
     margin-left: 1.5rem;
@@ -47,7 +48,7 @@
     border: none;
 
     .fa-times {
-      color: #263238;
+      color: #516181;
       font-size: 2em;
     }
   }
@@ -75,13 +76,13 @@
       display: flex;
       align-items: center;
       height: 3rem;
-      color: #263238;
+      color: #516181;
       text-decoration: none;
       border-radius: 0.625rem;
       transition: all .3s ease;
 
       .sidenav-link-icon {
-        font-size: 1.2em;
+        font-size: 1.1em;
         width: 2rem;
         min-width: 2rem;
         margin: 0 0.5rem;
@@ -89,7 +90,7 @@
       }
 
       .sidenav-link-text {
-        font-size: 1.2em;
+        font-size: 1.1em;
       }
     }
   }
@@ -97,15 +98,15 @@
   .sidenav-nav-item:hover {
     .sidenav-nav-link {
       background-color: #dcdcdc;
-      color: #263238;
+      color: #516181;
     }
   }
 }
 
 .active {
-  background-color: #263238;
+  background-color: #b4caf8;
   .sidenav-link-icon,
   .sidenav-link-text {
-    color: #f5f5f5;
+    //color: #f5f5f5;
   }
 }
