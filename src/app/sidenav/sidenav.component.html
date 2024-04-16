@@ -6,7 +6,21 @@
             <i class="fal fa-times close-icon"></i>
         </button>
     </div>
-    <br>
+
+    <div style="display: flex; flex-direction: row; margin: 2em 0 .7em 0 ;" @fadeInOut *ngIf="collapsed">
+        <div>
+            <img src="assets/images/avatar.png" class="avatar" >
+
+            <!--        <img src="{{user.image}}" class="avatar" alt="User avatar">-->
+        </div>
+        <div>
+            <span class="user-name">John Doe</span>
+            <!--        <span class="pl-4">{{user.email}}</span>-->
+        </div>
+    </div>
+
+
+    <mat-divider  style="margin: 1em 1.2em 0 1.2em"></mat-divider>
 
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
