@@ -2,7 +2,6 @@ import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/co
 import {navbarData} from "./nav-data";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import {MatDivider} from "@angular/material/divider";
 
 interface SideNavToggle {
   screenWidth: number;
@@ -19,7 +18,6 @@ interface SideNavToggle {
     NgClass,
     NgIf,
     RouterLinkActive,
-    MatDivider
   ],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
