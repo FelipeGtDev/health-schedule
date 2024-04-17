@@ -1,70 +1,250 @@
-export const calendarDataMock = [
+export const calendarDataMock =
+    {
+        period: {
+            start: '2021-08-01',
+            end: '2021-08-01',
+        },
+        schedules: [
 
-    {
-        patient: {
-            name: 'João da Silva',
-            age: 25,
-        },
-        professional: {
-            name: 'José',
-            specialty: 'Odontologia',
-        },
-        date: '2021-08-01',
-        time: '08:00',
-        tipo: 'Individual',
-        status: 'Agendado',
-    },
-    {
-        patients: [{
-            name: 'Carlos da Silva',
-            age: 32,
-        }],
-        professional: {
-            name: 'Isa Gonçalves',
-            specialty: 'Fisioterapia - RPG',
-        },
-        date: '2021-08-01',
-        time: '09:00',
-        tipo: 'Individual',
-        status: 'Realizado',
-    },
-    {
-        patients: [{
-            name: 'João da Silva',
-            age: 25,
-        }],
-        professional: {
-            name: 'Isa Gonçalves',
-            specialty: 'Fisioterapia - Pilates',
-        },
-        date: '2021-08-01',
-        time: '08:00',
-        tipo: 'Individual',
-        status: 'Agendado',
-    },
-    {
-        patients: [{
-            name: 'João da Silva',
-            age: 25,
-        },
+
             {
-                name: 'Maria da Silva',
-                age: 40,
+                id: 1,
+                patient: [
+                    {
+                        name: 'João da Silva',
+                        age: 25,
+                    },
+                ],
+                professional: {
+                    name: 'Isa Gonçalves',
+                    specialty: 'Fisioterapia - RPG',
+                },
+                date: '2021-08-01',
+                time: '08:00',
+                type: 'Individual',
+                status: 'Agendado',
+                convenio: {
+                    name: 'Unimed',
+                    type: 'Alpha'
+                },
             },
             {
-                name: 'Joana Angélica',
-                age: 60,
-            }],
-        professional: {
-            name: 'Isa Gonçalves',
-            specialty: 'Odontologia',
-        },
-        date: '2021-08-01',
-        time: '08:00',
-        tipo: 'Individual',
-        status: 'Agendado',
-    },
-
-]
-
+                id: 2,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '10:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 3,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '11:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 4,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '14:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 5,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '15:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 6,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '16:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 7,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '17:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+            {
+                id: 8,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+                        {
+                            name: 'Maria Pereira',
+                            age: 45,
+                        },
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '18:00',
+                type:
+                    'Grupo',
+                status:
+                    'Agendado',
+                convenio:
+                    null,
+            }
+            ,
+        ]
+    }
 

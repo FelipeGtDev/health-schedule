@@ -1,16 +1,15 @@
 <div class="header">
-    <h2>Agenda de atendimentos</h2>
+    Agenda de atendimentos
 </div>
 
 
-<button class="btn btn-primary" style="padding: .8em .8em 1.8em .8em; font-size: 1.5em" >
+<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em" >
     <i class="fal fa-calendar" style="margin-right: 1em"></i>
     <p style=""> Marcar consulta</p>
 </button>
 
 
-<form class="mt-10 ">
-
+<form class="mt-7">
     <div class="container">
 
         <div class="search-item ">
@@ -60,10 +59,10 @@
     </div>
 </form>
 
-<p class="mt-6">Período: 10/10/2021 - 11/10/2021</p>
+<p class="mt-6">Período: {{ calendarData.period.start }} - {{ calendarData.period.end }}</p>
 <div class="container">
     <table class="table table-compact table-zebra">
-        <thead>
+        <thead class="pt-1">
         <tr style="background-color: #b4caf8;" >
             <th>Paciente</th>
             <th>Profissional</th>
@@ -75,30 +74,30 @@
         </tr>
         </thead>
         <tbody>
-        <tr >
+        <tr *ngFor="let data of calendarData.schedules">
             <td>
                 <div>
-                    <p>João da Silva</p>
-                    <p>35 anos</p>
+                    <p>{{ data.patient.length > 1 ? "GRUPO" : data.patient[0].name }}</p>
+                    <p>{{ data.patient.length > 1 ? "" :  data.patient[0].age }}</p>
                 </div>
             </td>
             <td>
                 <div>
-                    <p>Dr. Pedro dos Santos</p>
-                    <p>Odontologia</p>
+                    <p>{{ data.professional.name }}</p>
+                    <p>{{ data.professional.specialty }}</p>
                 </div>
             </td>
             <td>
                 <div>
-                    <p>10/10/2021</p>
-                    <p style="font-size: 2em">10:00</p>
+                    <p>{{ data.date }}</p>
+                    <p style="font-size: 2em">{{ data.time }}</p>
                 </div>
             </td>
-            <td>Individual</td>
+            <td>{{ data.type }}</td>
             <td>
                 <div>
-                    <p>Unimed</p>
-                    <p>Alpha</p>
+                    <p>{{ data.convenio ? data.convenio.name : "------" }}</p>
+                    <p>{{ data.convenio ? data.convenio.type : "" }}</p>
                 </div>
             </td>
             <td>
@@ -118,92 +117,7 @@
                 </button>
             </td>
         </tr>
-        <tr>
-            <td>
-                <div>
-                    <p>João da Silva</p>
-                    <p>35 anos</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p>Dr. Pedro dos Santos</p>
-                    <p>Odontologia</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p>10/10/2021</p>
-                    <p style="font-size: 2em">10:00</p>
-                </div>
-            </td>
-            <td>Individual</td>
-            <td>
-                <div>
-                    <p>Unimed</p>
-                    <p>Alpha</p>
-                </div>
-            </td>
-            <td>
-                <div class="badge badge-error badge-outline " style="padding: 1em; border-radius: .3em">
-                    Realizada
-                </div>
-            </td>
-            <td>
-                <button class="btn btn-square" style="padding: .2em">
-                    <i class="fal fa-check" style="color: green"></i>
-                </button>
-                <button class="btn btn-square">
-                    <i class="fal fa-eye" style="color: blue"></i>
-                </button>
-                <button class="btn btn-square" >
-                    <i class="fal fa-trash" style="color: red"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <p>-------</p>
-                    <p></p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p></p>
-                    <p>Odontologia</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p>10/10/2021</p>
-                    <p style="font-size: 2em">10:00</p>
-                </div>
-            </td>
-            <td>Individual</td>
-            <td>
-                <div>
-                    <p>-------</p>
 
-                </div>
-            </td>
-            <td>
-                <div class="badge badge-accent" style="padding: 1em; border-radius: .3em">
-                    Agendar
-                </div>
-            </td>
-            <td>
-                <button class="btn btn-square" style="padding: .2em">
-                    <i class="fal fa-check" ></i>
-                </button>
-                <button class="btn btn-square">
-                    <i class="fal fa-eye" ></i>
-                </button>
-                <button class="btn btn-square" >
-                    <i class="fal fa-trash" ></i>
-                </button>
-            </td>
-        </tr>
         </tbody>
     </table>
 </div>

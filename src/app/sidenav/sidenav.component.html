@@ -19,14 +19,11 @@
         </div>
     </div>
 
-
-
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
             <a class="sidenav-nav-link" [routerLink]="[data.routelink]"
                routerLinkActive="active"
-               [routerLinkActiveOptions]="{exact: true}"
-            >
+               [routerLinkActiveOptions]="{exact: true}">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
                 <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
                     {{data.label}}
