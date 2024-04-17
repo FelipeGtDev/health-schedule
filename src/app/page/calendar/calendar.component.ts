@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {calendarDataMock} from "./caledar-data";
 
 
 @Component({
@@ -11,5 +12,7 @@ import { Component } from '@angular/core';
   styleUrl: './calendar.component.scss'
 })
 export class CalendarComponent {
+
+  calendarData = calendarDataMock
 
 }

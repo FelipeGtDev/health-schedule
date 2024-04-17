@@ -4,8 +4,7 @@
 
 .container {
   display: flex;
-
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .search-item {
@@ -14,6 +13,9 @@
   //align-items: center;
   padding: 0.5em;
   //border-bottom: 1px solid #e0e0e0;
+}
 
+.btn-square{
+  background-color: transparent;
 
 }
