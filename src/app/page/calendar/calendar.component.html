@@ -3,27 +3,27 @@
 </div>
 
 
-<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em" >
+<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em; color: #fff">
     <i class="fal fa-calendar" style="margin-right: 1em"></i>
     <p style=""> Marcar consulta</p>
 </button>
 
 
-<form class="mt-7">
+<form class="mt-7" [formGroup]="calendarForm">
     <div class="container">
 
-        <div class="search-item ">
+        <div class="search-item">
             <label class="column">
                 Paciente:
             </label>
-            <input type="text" placeholder="informe o nome do paciente"
+            <input type="text" placeholder="informe o nome do paciente" formControlName="patientName"
                    class="grow  input input-bordered items-center gap-2 pt-3 pb-3 "/>
         </div>
         <div class="search-item">
             <label class="column">
                 Profissional:
             </label>
-            <input type="text" placeholder="informe o nome do profissional"
+            <input type="text" placeholder="informe o nome do profissional" formControlName="professionalName"
                    class=" grow input input-bordered items-center gap-2 pt-3 pb-3"/>
         </div>
 
@@ -32,7 +32,7 @@
             <label>
                 data inicial:
             </label>
-            <input type="date" class="grow" placeholder="data inicial"
+            <input type="date" class="grow" placeholder="data inicial" formControlName="starDate"
                    class="input input-bordered items-center gap-2 pt-3 pb-3"/>
         </div>
         <div class="search-item">
@@ -40,7 +40,7 @@
             <label>
                 data final:
             </label>
-            <input type="date" class="grow" placeholder="data final"
+            <input type="date" class="grow" placeholder="data final" formControlName="endDate"
                    class="input input-bordered items-center gap-2 pt-3 pb-3"/>
         </div>
 
@@ -49,7 +49,7 @@
                 a
             </label>
             <div style="display: inline-flex">
-                <button class="btn btn-primary ">
+                <button class="btn btn-primary" (click)="findSchedules()">
                     <i class="fal fa-search" style="margin-right: .8em"></i>
                     Buscar
                 </button>
@@ -63,7 +63,7 @@
 <div class="container">
     <table class="table table-compact table-zebra">
         <thead class="pt-1">
-        <tr style="background-color: #b4caf8;" >
+        <tr style="background-color: #b4caf8;">
             <th>Paciente</th>
             <th>Profissional</th>
             <th>Data/Hora</th>
@@ -78,7 +78,7 @@
             <td>
                 <div>
                     <p>{{ data.patient.length > 1 ? "GRUPO" : data.patient[0].name }}</p>
-                    <p>{{ data.patient.length > 1 ? "" :  data.patient[0].age }}</p>
+                    <p>{{ data.patient.length > 1 ? "" : data.patient[0].age + ' anos' }}</p>
                 </div>
             </td>
             <td>
@@ -101,25 +101,39 @@
                 </div>
             </td>
             <td>
-                <div class="badge badge-primary badge-outline " style="padding: 1em; border-radius: .3em">
-                    Realizada
+                <!--                <div class="badge badge-primary badge-outline badge-calendar" >-->
+                <div class="badge-primary badge badge-outline badge-calendar" [ngClass]="{
+  'badge-primary': data.status === 'agendado',
+  'badge-error': data.status === 'cancelado',
+  'status-realizada': data.status === 'realizado',
+  'status-vago': data.status === 'vago',
+}">
+                    {{ data.status }}
                 </div>
             </td>
-            <td>
-                <button class="btn btn-square" style="padding: .2em">
-                    <i class="fal fa-check" style="color: green"></i>
+            <td style="display: flex; justify-content: space-around">
+                <button class="btn btn-accent ">
+                    <i class="fal fa-check" style="color: #fff"></i>
                 </button>
-                <button class="btn btn-square">
-                    <i class="fal fa-eye" style="color: blue"></i>
+                <button class="btn btn-primary">
+                    <i class="fal fa-eye" style="color: #fff"></i>
                 </button>
-                <button class="btn btn-square" >
-                    <i class="fal fa-trash" style="color: red"></i>
+                <button class="btn btn-error">
+                    <i class="fal fa-trash" style="color: #fff"></i>
                 </button>
             </td>
         </tr>
 
         </tbody>
     </table>
+</div>
+ 
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 
 

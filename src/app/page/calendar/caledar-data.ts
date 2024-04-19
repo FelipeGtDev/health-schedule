@@ -22,7 +22,7 @@ export const calendarDataMock =
                 date: '2021-08-01',
                 time: '08:00',
                 type: 'Individual',
-                status: 'Agendado',
+                status: 'realizado',
                 convenio: {
                     name: 'Unimed',
                     type: 'Alpha'
@@ -54,7 +54,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'realizado',
                 convenio:
                     null,
             }
@@ -85,7 +85,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'agendado',
                 convenio:
                     null,
             }
@@ -116,11 +116,38 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'cancelado',
                 convenio:
                     null,
-            }
-            ,
+            },
+            {
+                id: 44,
+                patient:
+                    [
+                        {
+                            name: 'Ana Banana',
+                            age: 53,
+                        },
+
+                    ],
+                professional:
+                    {
+                        name: 'Isa Gonçalves',
+                        specialty:
+                            'Fisioterapia - Pilates',
+                    }
+                ,
+                date: '2021-08-01',
+                time:
+                    '14:00',
+                type:
+                    'Grupo',
+                status:
+                    'vago',
+                convenio:
+                    null,
+            },
+
             {
                 id: 5,
                 patient:
@@ -147,7 +174,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'agendado',
                 convenio:
                     null,
             }
@@ -178,7 +205,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'agendado',
                 convenio:
                     null,
             }
@@ -209,7 +236,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'agendado',
                 convenio:
                     null,
             }
@@ -240,7 +267,7 @@ export const calendarDataMock =
                 type:
                     'Grupo',
                 status:
-                    'Agendado',
+                    'agendado',
                 convenio:
                     null,
             }

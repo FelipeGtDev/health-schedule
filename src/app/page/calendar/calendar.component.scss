@@ -24,3 +24,30 @@
   padding-top: .3em;
   padding-bottom: .3em;
 }
+
+.badge-calendar{
+  padding: 1em;
+  border-radius: 2em;
+  border: solid;
+  width: 8em;
+}
+
+
+
+
+.status-agendada {
+  color: #4A00FF;
+}
+
+.status-cancelada {
+  color: #FF0000FF;
+}
+
+.status-realizada {
+  color: #818181;
+}
+
+.status-vago {
+    color: #4A00FF;
+  background-color: #30fd1a;
+}
