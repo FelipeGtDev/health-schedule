@@ -25,10 +25,14 @@ interface SideNavToggle {
 })
 export class SidenavComponent implements OnInit {
 
+
+
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
+
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
+  showLogoText = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -46,10 +50,21 @@ export class SidenavComponent implements OnInit {
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+
+    if (this.collapsed) {
+      // Aguarda 0.5s para mostrar o texto "Healfin"
+      setTimeout(() => {
+        this.showLogoText = true;
+      }, 200);
+    } else {
+      // Esconde imediatamente ao recolher o menu
+      this.showLogoText = false;
+    }
   }
 
-  closeSidenav(): void {
-    this.collapsed = false;
-    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
-  }
+
+  // closeSidenav(): void {
+  //   this.collapsed = false;
+  //   this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  // }
 }

@@ -1,139 +1,137 @@
 <div class="header">
-    Agenda de atendimentos
+  Agenda de atendimentos
 </div>
 
 
 <button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em; color: #fff">
-    <i class="fal fa-calendar" style="margin-right: 1em"></i>
-    <p style=""> Marcar consulta</p>
+  <i class="fal fa-calendar" style="margin-right: 1em"></i>
+  <p style=""> Marcar consulta</p>
 </button>
 
 
 <form class="mt-7" [formGroup]="calendarForm">
-    <div class="container">
+  <div class="container">
 
-        <div class="search-item">
-            <label class="column">
-                Paciente:
-            </label>
-            <input type="text" placeholder="informe o nome do paciente" formControlName="patientName"
-                   class="grow  input input-bordered items-center gap-2 pt-3 pb-3 "/>
-        </div>
-        <div class="search-item">
-            <label class="column">
-                Profissional:
-            </label>
-            <input type="text" placeholder="informe o nome do profissional" formControlName="professionalName"
-                   class=" grow input input-bordered items-center gap-2 pt-3 pb-3"/>
-        </div>
-
-        <div class="search-item">
-
-            <label>
-                data inicial:
-            </label>
-            <input type="date" placeholder="data inicial" formControlName="starDate"
-                   class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
-        </div>
-        <div class="search-item">
-
-            <label>
-                data final:
-            </label>
-            <input type="date" placeholder="data final" formControlName="endDate"
-                   class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
-        </div>
-
-        <div class="search-item">
-            <label style="color: transparent">
-                a
-            </label>
-            <div style="display: inline-flex">
-                <button class="btn btn-primary" (click)="findSchedules()">
-                    <i class="fal fa-search" style="margin-right: .8em"></i>
-                    Buscar
-                </button>
-
-            </div>
-        </div>
+    <div class="search-item">
+      <label class="column">
+        Paciente:
+      </label>
+      <input type="text" placeholder="informe o nome do paciente" formControlName="patientName"
+             class="grow  input input-bordered items-center gap-2 pt-3 pb-3 "/>
     </div>
+    <div class="search-item">
+      <label class="column">
+        Profissional:
+      </label>
+      <input type="text" placeholder="informe o nome do profissional" formControlName="professionalName"
+             class=" grow input input-bordered items-center gap-2 pt-3 pb-3"/>
+    </div>
+
+    <div class="search-item">
+
+      <label>
+        data inicial:
+      </label>
+      <input type="date" placeholder="data inicial" formControlName="starDate"
+             class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
+    </div>
+    <div class="search-item">
+
+      <label>
+        data final:
+      </label>
+      <input type="date" placeholder="data final" formControlName="endDate"
+             class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
+    </div>
+
+    <div class="search-item">
+      <label style="color: transparent"> a </label>
+      <div style="display: inline-flex">
+        <button class="btn btn-primary" (click)="findSchedules()">
+          <i class="fal fa-search" style="margin-right: .8em"></i>
+          Buscar
+        </button>
+
+      </div>
+    </div>
+  </div>
 </form>
 
 <p class="mt-6">Período: {{ calendarData.period.start }} - {{ calendarData.period.end }}</p>
 <div class="container">
-    <table class="table table-compact table-zebra">
-        <thead class="pt-1">
-        <tr style="background-color: #b4caf8;">
-            <th>Paciente</th>
-            <th>Profissional</th>
-            <th>Data/Hora</th>
-            <th>Tipo</th>
-            <th>Convênio</th>
-            <th>Situação</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let data of calendarData.schedules">
-            <td>
-                <div>
-                    <p>{{ data.patient.length > 1 ? "GRUPO" : data.patient[0].name }}</p>
-                    <p>{{ data.patient.length > 1 ? "" : data.patient[0].age + ' anos' }}</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p>{{ data.professional.name }}</p>
-                    <p>{{ data.professional.specialty }}</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <p>{{ data.date }}</p>
-                    <p style="font-size: 2em">{{ data.time }}</p>
-                </div>
-            </td>
-            <td>{{ data.type }}</td>
-            <td>
-                <div>
-                    <p>{{ data.convenio ? data.convenio.name : "------" }}</p>
-                    <p>{{ data.convenio ? data.convenio.type : "" }}</p>
-                </div>
-            </td>
-            <td>
-                <!--                <div class="badge badge-primary badge-outline badge-calendar" >-->
-                <div class="badge-primary badge badge-outline badge-calendar" [ngClass]="{
+  <table class="table table-compact table-zebra">
+    <thead class="pt-1">
+    <tr style="background-color: #b4caf8;">
+      <th>Paciente</th>
+      <th>Profissional</th>
+      <th>Data/Hora</th>
+      <th>Tipo</th>
+      <th>Convênio</th>
+      <th>Situação</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of calendarData.schedules">
+      <td>
+        <div>
+          <p>{{ data.patient.length > 1 ? "GRUPO" : data.patient[0].name }}</p>
+          <p>{{ data.patient.length > 1 ? "" : data.patient[0].age + ' anos' }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.professional.name }}</p>
+          <p>{{ data.professional.specialty }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.date }}</p>
+          <p style="font-size: 2em">{{ data.time }}</p>
+        </div>
+      </td>
+      <td>{{ data.type }}</td>
+      <td>
+        <div>
+          <p>{{ data.convenio ? data.convenio.name : "------" }}</p>
+          <p>{{ data.convenio ? data.convenio.type : "" }}</p>
+        </div>
+      </td>
+      <td>
+        <!--                <div class="badge badge-primary badge-outline badge-calendar" >-->
+        <div class="badge-primary badge badge-outline badge-calendar" [ngClass]="{
   'badge-primary': data.status === 'agendado',
   'badge-error': data.status === 'cancelado',
   'status-realizada': data.status === 'realizado',
   'status-vago': data.status === 'vago',
 }">
-                    {{ data.status }}
-                </div>
-            </td>
-            <td style="display: flex; justify-content: space-around">
-                <button class="btn btn-accent ">
-                    <i class="fal fa-check" style="color: #fff"></i>
-                </button>
-                <button class="btn btn-primary">
-                    <i class="fal fa-eye" style="color: #fff"></i>
-                </button>
-                <button class="btn btn-error">
-                    <i class="fal fa-trash" style="color: #fff"></i>
-                </button>
-            </td>
-        </tr>
+          {{ data.status }}
+        </div>
+      </td>
+      <td style="display: flex; justify-content: space-around">
+        <button class="btn btn-accent ">
+          <i class="fal fa-check" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-primary">
+          <i class="fal fa-eye" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-error">
+          <i class="fal fa-trash" style="color: #fff"></i>
+        </button>
+      </td>
+    </tr>
 
-        </tbody>
-    </table>
+    </tbody>
+  </table>
 </div>
- 
+
 <div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 
 

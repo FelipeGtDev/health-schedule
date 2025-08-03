@@ -1,1 +1,112 @@
-<p>employee works!</p>
+<div class="header">
+  Funcionários
+</div>
+
+<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em; color: #fff">
+  <i class="fa fa-user-plus" aria-hidden="true"></i>
+  <p style=""> Cadastrar Funcionário</p>
+</button>
+
+
+<form [formGroup]="employeeSearchForm" class="mt-7 flex items-end gap-4 w-full">
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Funcionário:</label>
+    <input
+      type="text"
+      formControlName="employeeName"
+      placeholder="Informe o nome do funcionário"
+      class="input input-bordered py-3 px-4 w-full"
+    />
+  </div>
+
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Função:</label>
+    <select
+      formControlName="employeeRole"
+      class="select select-bordered py-3 px-4 w-full"
+    >
+      <option disabled value="">Selecione a função</option>
+      <option *ngFor="let func of funcoes" [value]="func.id">
+        {{ func.role }}
+      </option>
+    </select>
+  </div>
+
+
+  <div class="flex flex-col">
+    <label class="invisible">.</label>
+    <button  class="btn btn-primary py-3 px-6" (click)="buscar()">
+      <i class="fal fa-search mr-2" ></i> Buscar
+    </button>
+  </div>
+</form>
+
+<p class="mt-6" style="color: transparent">.</p>
+<div class="container" *ngIf="exibirListaFuncionarios">
+
+  <table class="table table-compact table-zebra">
+    <thead class="pt-1">
+    <tr style="background-color: #b4caf8; ">
+      <th>Nome</th>
+      <th>Função</th>
+      <th>telefone</th>
+      <th>Situação</th>
+      <th style="width: 215px;">Ações</th>
+    </tr>
+    </thead>
+    <tbody style="padding: 4.2px 16px">
+    <tr *ngFor="let data of employeeDataMock">
+    <td>
+        <div>
+          <p>{{ data.name }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.role }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.phone }}</p>
+
+        </div>
+      </td>
+
+      <td>
+        <!--                <div class="badge badge-primary badge-outline badge-calendar" >-->
+        <div class="badge-primary badge badge-outline badge-calendar" [ngClass]="{
+  'badge-primary': data.status === 'Ativo',
+  'badge-error': data.status === 'Inativo',
+
+}">
+          {{ data.status }}
+        </div>
+      </td>
+      <td style="display: flex; justify-content: space-around">
+        <button class="btn btn-accent ">
+          <i class="fal fa-edit" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-primary">
+          <i class="fal fa-eye" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-error">
+          <i class="fal fa-trash" style="color: #fff"></i>
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!--<p *ngIf="exibirListaFuncionarios">Lista deve aparecer abaixo</p>-->
+
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+

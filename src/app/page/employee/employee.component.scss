@@ -1,0 +1,18 @@
+.example-full-width {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-square{
+  background-color: transparent;
+}
+
+.table :where(th, td){
+  padding-top: .3em;
+  padding-bottom: .3em;
+}
+
