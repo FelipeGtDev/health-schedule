@@ -9,6 +9,7 @@
 
 
 <form [formGroup]="employeeSearchForm" class="mt-7 flex items-end gap-4 w-full">
+
   <div class="flex flex-col flex-1">
     <label class="mb-1">Funcionário:</label>
     <input
@@ -35,14 +36,14 @@
 
   <div class="flex flex-col">
     <label class="invisible">.</label>
-    <button  class="btn btn-primary py-3 px-6" (click)="buscar()">
-      <i class="fal fa-search mr-2" ></i> Buscar
+    <button class="btn btn-primary py-3 px-6" (click)="buscar()">
+      <i class="fal fa-search mr-2"></i> Buscar
     </button>
   </div>
 </form>
 
 <p class="mt-6" style="color: transparent">.</p>
-<div class="container" *ngIf="exibirListaFuncionarios">
+<div *ngIf="exibirListaFuncionarios">
 
   <table class="table table-compact table-zebra">
     <thead class="pt-1">
@@ -56,7 +57,7 @@
     </thead>
     <tbody style="padding: 4.2px 16px">
     <tr *ngFor="let data of employeeDataMock">
-    <td>
+      <td>
         <div>
           <p>{{ data.name }}</p>
         </div>

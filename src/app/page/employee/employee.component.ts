@@ -55,9 +55,9 @@ export class EmployeeComponent implements OnInit {
 
 
   buscar() {
-    this.exibirListaFuncionarios = true;
+    this.exibirListaFuncionarios = !this.exibirListaFuncionarios;
     this.employeeDataMock = this.employeeData;
-    console.log('teste')
+
   }
 
   protected readonly calendarData = calendarDataMock;
