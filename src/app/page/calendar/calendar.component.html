@@ -1,11 +1,9 @@
-<div class="header">
-  Agenda de atendimentos
-</div>
-
-<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em; color: #fff">
-  <i class="fal fa-calendar" style="margin-right: 1em"></i>
-  <p style=""> Marcar consulta</p>
-</button>
+<app-header
+  title="Agenda de atendimentos"
+  buttonFunction="Marcar consulta"
+  icon="fal fa-calendar"
+  (onClick)="openRegistrationModal()">
+></app-header>
 
 
 <form [formGroup]="calendarForm" class="mt-7 flex items-end gap-4 w-full">

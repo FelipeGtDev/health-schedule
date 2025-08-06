@@ -1,11 +1,9 @@
-<div class="header">
-  Funcionários
-</div>
-
-<button class="btn btn-accent" style="padding: .7em .7em 1.7em .7em; font-size: 1.2em; color: #fff">
-  <i class="fa fa-user-plus" aria-hidden="true"></i>
-  <p style=""> Cadastrar Funcionário</p>
-</button>
+<app-header
+  title="Funcionários"
+  buttonFunction="Cadastrar funcionário"
+  icon="fa fa-user-plus"
+  (onClick)="openRegistrationModal()">
+</app-header>
 
 
 <form [formGroup]="employeeSearchForm" class="mt-7 flex items-end gap-4 w-full">

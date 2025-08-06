@@ -4,6 +4,8 @@ import {CommonModule, NgClass, NgForOf} from "@angular/common";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {employeeDataMock} from "./employee-data-mock";
 import {calendarDataMock} from "../calendar/caledar-data";
+import {HeaderComponent} from "../../shared/header/header.component";
+
 
 @Component({
   selector: 'app-employee',
@@ -12,7 +14,9 @@ import {calendarDataMock} from "../calendar/caledar-data";
     CommonModule,
     ReactiveFormsModule,
     NgClass,
-    NgForOf
+    NgForOf,
+    HeaderComponent,
+    HeaderComponent,
   ],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.scss'
@@ -22,9 +26,9 @@ export class EmployeeComponent implements OnInit {
   employeeSearchForm: FormGroup;
 
 
-
   employeeData = employeeDataMock
   employeeDataMock: any[] = [];
+  protected readonly calendarData = calendarDataMock;
 
   funcoes = [
     {id: 5, role: 'Administrador'},
@@ -60,5 +64,8 @@ export class EmployeeComponent implements OnInit {
 
   }
 
-  protected readonly calendarData = calendarDataMock;
+
+  openRegistrationModal(){
+    console.log('Botão do cabeçalho clicado! (funcionário)')
+  }
 }

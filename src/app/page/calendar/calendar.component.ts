@@ -3,6 +3,7 @@ import {calendarDataMock} from "./caledar-data";
 import {NgClass, NgForOf} from "@angular/common";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {ScheduleService} from "../../services/schedule.service";
+import {HeaderComponent} from "../../shared/header/header.component";
 
 
 @Component({
@@ -11,7 +12,8 @@ import {ScheduleService} from "../../services/schedule.service";
   imports: [
     NgForOf,
     NgClass,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeaderComponent
   ],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss'
@@ -47,6 +49,9 @@ export class CalendarComponent implements OnInit {
     // )
   }
 
+  openRegistrationModal(){
+    console.log('Botão do cabeçalho clicado! (agendamento)')
+  }
 
 }
 
