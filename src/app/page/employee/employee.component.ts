@@ -3,7 +3,6 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule, NgClass, NgForOf} from "@angular/common";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {employeeDataMock} from "./employee-data-mock";
-import {calendarDataMock} from "../calendar/caledar-data";
 import {HeaderComponent} from "../../shared/header/header.component";
 
 
@@ -25,10 +24,9 @@ export class EmployeeComponent implements OnInit {
 
   employeeSearchForm: FormGroup;
 
-
   employeeData = employeeDataMock
   employeeDataMock: any[] = [];
-  protected readonly calendarData = calendarDataMock;
+  // protected readonly calendarData = calendarDataMock;
 
   funcoes = [
     {id: 5, role: 'Administrador'},

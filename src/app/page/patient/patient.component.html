@@ -1,1 +1,105 @@
-<p>patient works!</p>
+<app-header
+  title="Pacientes"
+  buttonFunction="Cadastrar paciente"
+  icon="fa fa-user-plus"
+  (onClick)="openRegistrationModal()">
+</app-header>
+
+
+<form [formGroup]="patientSearchForm" class="mt-7 flex items-end gap-4 w-full">
+
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Paciente:</label>
+    <input
+      type="text"
+      formControlName="patientName"
+      placeholder="Informe o nome do paciente"
+      class="input input-bordered py-3 px-4 w-full"
+    />
+  </div>
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Telefone:</label>
+    <input
+      type="text"
+      formControlName="patientPhone"
+      placeholder="Informe o telefone do paciente"
+      class="input input-bordered py-3 px-4 w-full"
+
+    />
+  </div>
+
+
+  <div class="flex flex-col">
+    <label class="invisible">.</label>
+    <button class="btn btn-primary py-3 px-6" (click)="buscar()">
+      <i class="fal fa-search mr-2"></i> Buscar
+    </button>
+  </div>
+</form>
+
+<p class="mt-6" style="color: transparent">.</p>
+<div *ngIf="showPatients">
+
+  <table class="table table-compact table-zebra">
+    <thead class="pt-1">
+    <tr style="background-color: #b4caf8; ">
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>telefone</th>
+      <th>Ultimo atendimento</th>
+      <th style="width: 215px;">Ações</th>
+    </tr>
+    </thead>
+    <tbody style="padding: 4.2px 16px">
+    <tr *ngFor="let data of patientDataMock">
+      <td>
+        <div>
+          <p>{{ data.name }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ formatCpf(data.cpf) }}</p>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.phone }}</p>
+
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>{{ data.lastVisit }}</p>
+
+        </div>
+      </td>
+
+
+      <td style="display: flex; justify-content: space-around">
+        <button class="btn btn-accent ">
+          <i class="fal fa-edit" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-primary">
+          <i class="fal fa-eye" style="color: #fff"></i>
+        </button>
+        <button class="btn btn-error">
+          <i class="fal fa-trash" style="color: #fff"></i>
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!--<p *ngIf="exibirListaFuncionarios">Lista deve aparecer abaixo</p>-->
+
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
