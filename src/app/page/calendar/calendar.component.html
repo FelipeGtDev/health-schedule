@@ -3,51 +3,39 @@
   buttonFunction="Marcar consulta"
   icon="fal fa-calendar"
   (onClick)="openRegistrationModal()">
-></app-header>
-
+  >
+</app-header>
 
 <form [formGroup]="calendarForm" class="mt-7 flex items-end gap-4 w-full">
   <div class="flex flex-col flex-1">
-    <label class="column">
-      Paciente:
-    </label>
-    <input type="text" placeholder="informe o nome do paciente" formControlName="patientName"
-           class="grow input input-bordered items-center gap-2 pt-3 pb-3 "/>
+    <label class="mb-1">Paciente:</label>
+    <input type="text" formControlName="patientName" placeholder="nome do paciente"
+           class="input input-bordered py-3 px-4 w-full"/>
   </div>
 
-  <div class="search-item">
-    <label class="column">
-      Profissional:
-    </label>
-    <input type="text" placeholder="informe o nome do profissional" formControlName="professionalName"
-           class=" grow input input-bordered items-center gap-2 pt-3 pb-3"/>
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Profissional:</label>
+    <input type="text" placeholder="nome do profissional" formControlName="professionalName"
+           class="input input-bordered py-3 px-4 w-full"/>
   </div>
 
-  <div class="search-item">
-    <label>
-      data inicial:
-    </label>
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Data inicial:</label>
     <input type="date" placeholder="data inicial" formControlName="starDate"
-           class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
+           class="input input-bordered py-3 px-4 w-full"/>
   </div>
 
-  <div class="search-item">
-    <label>
-      data final:
-    </label>
+  <div class="flex flex-col flex-1">
+    <label class="mb-1">Data final:</label>
     <input type="date" placeholder="data final" formControlName="endDate"
-           class="input grow input-bordered items-center gap-2 pt-3 pb-3"/>
+           class="input input-bordered py-3 px-4 w-full"/>
   </div>
 
-  <div class="search-item">
-    <label style="color: transparent"> a </label>
-    <div style="display: inline-flex">
-      <button class="btn btn-primary" (click)="findSchedules()">
-        <i class="fal fa-search" style="margin-right: .8em"></i>
-        Buscar
-      </button>
-    </div>
-
+  <div class="flex flex-col">
+    <label class="invisible">.</label>
+    <button class="btn btn-primary py-3 px-6" (click)="findSchedules()">
+      <i class="fal fa-search mr-2"></i> Buscar
+    </button>
   </div>
 </form>
 

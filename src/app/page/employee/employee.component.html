@@ -5,17 +5,11 @@
   (onClick)="openRegistrationModal()">
 </app-header>
 
-
 <form [formGroup]="employeeSearchForm" class="mt-7 flex items-end gap-4 w-full">
-
   <div class="flex flex-col flex-1">
     <label class="mb-1">Funcionário:</label>
-    <input
-      type="text"
-      formControlName="employeeName"
-      placeholder="Informe o nome do funcionário"
-      class="input input-bordered py-3 px-4 w-full"
-    />
+    <input type="text" formControlName="employeeName" placeholder="Informe o nome do funcionário"
+           class="input input-bordered py-3 px-4 w-full"/>
   </div>
 
   <div class="flex flex-col flex-1">
